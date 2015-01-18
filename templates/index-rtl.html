@@ -10,13 +10,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Transpose - Traffic Analysis Dashboard</title>
+    <title>SB Admin - Bootstrap Admin Template</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
+    <!-- Bootstrap Core CSS RTL-->
+    <link href="{% static 'css/bootstrap-rtl.min.css' %}" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet">
+    <link href="{% static 'css/sb-admin-rtl.css' %}" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="{% static 'css/plugins/morris.css' %}" rel="stylesheet">
@@ -24,30 +28,13 @@
     <!-- Custom Fonts -->
     <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
 
-    <style type="text/css">
-      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
-    </style>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxmZwaoJo3TW82HylIR2kmVCLCPp7IDV4">
-    </script>
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: { lat: -34.397, lng: 150.644},
-          zoom: 8
-        };
-        var map = new google.maps.Map(document.getElementById('map-canvas'),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+
 </head>
 
 <body>
@@ -64,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Transpose - Traffic Analyzer</a>
+                <a class="navbar-brand" href="index.html">SB Admin</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -170,7 +157,7 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
+                    <li>
                         <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
@@ -202,7 +189,7 @@
                     <li>
                         <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li>
                 </ul>
@@ -213,15 +200,12 @@
         <div id="page-wrapper">
 
             <div class="container-fluid">
-            <br><br><br>
-            <div class="main-image">
-                <img src="{% static 'logo.png' %}">
-            </div>
+
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Traffic Analysis Dashboard <small>Statistics Overview</small>
+                            Dashboard <small>Statistics Overview</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
@@ -232,14 +216,14 @@
                 </div>
                 <!-- /.row -->
 
-<!--                 <div class="row">
+                <div class="row">
                     <div class="col-lg-12">
                         <div class="alert alert-info alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             <i class="fa fa-info-circle"></i>  <strong>Like SB Admin?</strong> Try out <a href="http://startbootstrap.com/template-overviews/sb-admin-2" class="alert-link">SB Admin 2</a> for additional features!
                         </div>
                     </div>
-                </div> -->
+                </div>
                 <!-- /.row -->
 
                 <div class="row">
@@ -333,20 +317,8 @@
                     </div>
                 </div>
                 <!-- /.row -->
+
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i>Heat Map</h3>
-                            </div>
-                            <div class="panel-body">
-                                <!-- <div id="morris-area-chart"></div> -->
-                                <div id="map-canvas"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-<!--                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -357,7 +329,7 @@
                             </div>
                         </div>
                     </div>
-                </div> -->
+                </div>
                 <!-- /.row -->
 
                 <div class="row">
@@ -510,7 +482,7 @@
     <script src="{% static 'js/jquery.js' %}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
     <script src="{% static 'js/plugins/morris/raphael.min.js' %}"></script>
