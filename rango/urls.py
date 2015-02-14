@@ -1,9 +1,13 @@
-__author__ = 'abhinavagarwalla'
 
 from django.conf.urls import patterns,url
+from django.views.generic import TemplateView
+
 from rango import views
 
 urlpatterns = patterns('',
-                url(r'^$',views.index,name = 'index'),
-                url(r'^category/(?P<category_name_url>\w+)/$',views.category,name = 'category'),
+                url(r'^$',TemplateView.as_view(template_name='index.html')),
+                url(r'^data$',TemplateView.as_view(template_name='data.html')),
+                url(r'^data1$',TemplateView.as_view(template_name='data1.html')),
+                url(r'^data2$',TemplateView.as_view(template_name='data2.html')),
+
             )
