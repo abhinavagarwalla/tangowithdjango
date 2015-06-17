@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Rango</title>
-</head>
-<body>
-    <h1>{{  category_name }}</h1>
-    {% if category %}
-        {%  if pages %}
+{%  load staticfiles %}<!-- New Line -->
+{% load static %}
+<html lang="en">
 
-            <ul>
-               {% for page in pages %}
-                <li><a href = "{{ page.url }}">{{ page.title }}</a></li>
-                {% endfor %}
-            </ul>
-        {%  else %}
-            <strong>No pages exist in this category</strong>
-        {% endif %}
-    {% else %}
-        <strong> the specified category {{ category_name }}</strong>
-    {% endif %}
+<head>
+    <title>Results Viewer</title>
+</head>
+
+<body>
+<p> First one is initial image, second is after pre-processing </p>
+{% static "" as bu %}
+<img class="media-object" src="{{ bu }}/Images/{{imgpath}}.png" alt="">
+<img class="media-object" src="{{ bu }}/SauvolaImages/{{imgpath}}.jpg" alt="">
+<p> Basic Tesseract Output <p>
+<p> {{ TOoutput }} </p>
+<p> After Sauvola Output </p>
+<p> {{ Sauvolaoutput }} </p>
 </body>
+
 </html>
